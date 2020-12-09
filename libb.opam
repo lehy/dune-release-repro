@@ -1,0 +1,28 @@
+opam-version: "2.0"
+version: "1.0.0"
+synopsis: "Dummy synopsis"
+description: """
+Dummy description.
+"""
+maintainer: ["Ronan Le Hy <ronan.lehy@gmail.com>"]
+authors: ["Ronan Le Hy"]
+license: "BSD-3-Clause"
+homepage: "https://github.com/lehy/dune-release-repro"
+bug-reports: "https://github.com/lehy/dune-release-repro/issues"
+depends: [
+  "dune" {>= "2.4"}
+  "ocaml" {>= "4.07.1"}
+]
+build: [
+  [
+    "dune"
+    "build"
+    "-p"
+    name
+    "-j"
+    jobs
+    "@install"
+    "@doc" {with-doc}
+  ]
+]
+dev-repo: "git+https://github.com/lehy/dune-release-repro.git"
